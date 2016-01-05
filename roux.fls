@@ -1,4 +1,4 @@
-PWD C:/Users/Dominic/Documents/Projekte/roux
+PWD C:/Users/Dominic/Documents/Projects/Roux
 INPUT c:/texlive/2015/texmf.cnf
 INPUT c:/texlive/2015/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2015/texmf-var/web2c/pdftex/pdflatex.fmt
@@ -185,10 +185,10 @@ INPUT c:/texlive/2015/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm
 INPUT slices.png
 INPUT ./slices.png
 INPUT ./slices.png
+INPUT c:/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT f2b_transparent.png
 INPUT ./f2b_transparent.png
 INPUT ./f2b_transparent.png
-INPUT c:/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT lse.png
 INPUT ./lse.png
 INPUT ./lse.png
