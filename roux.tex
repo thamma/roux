@@ -56,6 +56,7 @@ The most common method is closely related to the Beginner's Method: \emph{Fridri
 To be able to communicate on this abstract level of thinking, we are going to use the standart notation and terminology which I will explain below.\par
 In our notation we are not going to consider the colors of the individual facelets but rather keep the cube in one orientation. Thus we can easily refer to the six faces of the puzzle as \textbf{u}p, \textbf{f}ront, \textbf{r}ight, \textbf{l}eft, \textbf{b}ack and \textbf{d}own and abbreviate them each by their initial letter. Keeping that in mind, we intuitively define the moves \emph{U}, \emph{F}, \emph{R}, \emph{L}, \emph{B} and \emph{D} as clockwise 90\textdegree\ turns of their respective face.\par
 To denote the counterclockwise turn of a side, we add an apostrophe to the respective turn. If we wanted to perform a 180\textdegree\ rotation of a face, we would simply append the number two to the move.
+% Add example
 
 
 \subsection{Observations}
@@ -92,7 +93,7 @@ We now want to solve the corners of the upper layer to be left with six unsolved
 
 As mentioned previously, we are now left with six edges and four centers unsolved. As you realize quickly, the centers are at most two \texttt{M}-slice moves from being in their correct positions, leaving us with the \emph{Last Six Edges} unsolved. You can see in the figure beside how the cube would look so far. What speeds up the process of solving the Last Six Edges is the fact that you can now solve the cube by only using algorithms of $\langle M, U\rangle$, i.e., you do not have to scramble what you have solved so far.\par
 
-No we would like to split solving the Last Six Edges into three substeps: orienting the edges, solving the left and right upper edge, and finishing the middle slice.\par
+Now we would like to split solving the Last Six Edges into three substeps: orienting the edges, solving the left and right upper edge, and finishing the middle slice.\par
 
 By orienting the edges we mean that we want them to only show bottom or top layer stickers on the bottom and top layer. In our example, this would make the \texttt{U}-face only contain blue and green stickers. This can either be achieved intuitively with a little bit of practise or by folloing the patterns and steps mentioned in the according section below. Now we intuitively insert the last remaining edges on the left- and right-hand side. All that is left to do is resolving one out of four cases to finish off the middle layer.\par
 
@@ -103,10 +104,19 @@ Our goal is to build a 1x2x3 block on our first color side. Notice that we requi
 
 You can start off by building a 1x1x2 block out of a center and edge piece. By adding more 1x1x2 blocks, you can first expand that block to a 1x2x2, then to a 1x2x3 block.\par
 
-\includegraphics[height=5cm]{resources/fb_1.png}\caption{First step}
-\includegraphics[height=5cm]{resources/fb_2.png}\caption{Second step}
-\includegraphics[height=5cm]{resources/fb_3.png}\caption{Third step}
-%Alternatively, you could 
+\begin{figure}[h]
+\centering
+\begin{subfigure}{.9\textwidth}
+  \includegraphics[width=.3\linewidth]{resources/fb_1.png}
+  \includegraphics[width=.3\linewidth]{resources/fb_2.png}
+  \includegraphics[width=.3\linewidth]{resources/fb_3.png}
+\end{subfigure}
+\caption*{Building the first block with three 1x1x2 blocks}
+\end{figure}
+
+Alternatively, we could also start by putting the edges in place and inserting the corners afterwards. As shown in the picture, we want to keep the 1x2x3 block on the left bottom edge.
+
+Alternatively, you could bring the edges in place first and insert the corners afterwards.
 
 
 \section{Second block}
