@@ -16,17 +16,29 @@
 \usepackage{subcaption}
 
 \usepackage{graphicx}
-\usepackage{wrapfig}
 \usepackage{caption}
 
 \usepackage[hidelinks]{hyperref}
 
-\newcommand{\wrapfig}[5] {
-	\begin{wrapfigure}{#2}{#3\textwidth}
+\newcommand{\img}[3]{
+	\begin{figure}[ht]
 	\centering
-	\includegraphics[width=#4\textwidth]{resources/#1}
-	\caption*{#5}
-	\end{wrapfigure}
+  \includegraphics[width=#2\textwidth]{resources/#1}
+	\caption{#3}
+	\end{figure}
+}
+
+\newcommand{\multifig}{
+	\begin{figure}[ht]
+	\centering
+	\begin{subfigure}{.9\textwidth}
+   	\includegraphics[width=.3\linewidth]{resources/fb_1.png}
+  	\includegraphics[width=.3\linewidth]{resources/fb_2.png}
+ 	\includegraphics[width=.3\linewidth]{resources/fb_3.png}
+	\end{subfigure}
+	\caption{Building the first block with three 1x1x2 blocks}
+\end{figure}
+
 }
 
 \begin{document}
@@ -46,7 +58,7 @@ After I ensured we are on the same level of understanding the notation, I will f
 \section{Perspectives}
 Apart from Roux, there are plenty methods out there of which I will mention the most prevalent ones.
 
-\wrapfig{union.png}{R}{0.4}{0.3}{The four steps of using the Beginners Method}
+\img{union.png}{0.4}{The four steps of using the Beginners Method}
 
 First off, I am going to cover the \emph{Beginner's Method}, also known as \emph{Layer by Layer Method}. The Method does what the name implies: it solves the cube layer by layer. This method seems pretty intuitive to most people as it starts off by solving one face (which is easy to begin with).\par
 The most common method is closely related to the Beginner's Method: \emph{Fridrich's Method} or more commonly known as \emph{CFOP}. CFOP begins by forming a \textbf{c}ross on one side, extending that cross to the \textbf{f}irst two layers, \textbf{o}rienting, and \textbf{p}ermutating the last layer (leading to its unique name). You can see how closely related it is to the Beginner's Method: The key difference is that the Beginner's Method splits building the first two layers into two seperate steps whereas CFOP does this more efficiently. There are some more methods which deserve to be named here, for instance \emph{Petrus' Method}, but I'm going to leave it at that.
@@ -62,7 +74,7 @@ To denote the counterclockwise turn of a side, we add an apostrophe to the respe
 \subsection{Observations}
 For clarification: we consider a respective side of the cube to face us as we turn it. For instance \emph{U} and \emph{D} rotate opposite sides and turn in opposite directions. We certainly could also use \emph{U3} with the same logic as we defined \emph{U2} yet we would notice that \emph{U3} is the very same as \emph{U'}. We also see that \emph{R2} and \emph{R2'} result in the same turns. So would someone want to use \emph{R2'} at all? Yes - sometimes it can be useful to hint using two \emph{R'} moves over two \emph{R} moves for more efficient turning. Note how we are using uppercase letters for the basic turns. Lowercase letters are reserved for an upcoming notation.
 
-\wrapfig{slices.png}{R}{0.35}{0.3}{From top to bottom: the middle, equatorial and standing slice}
+\img{slices.png}{0.4}{From top to bottom: the middle, equatorial and standing slice}
 
 \subsection{Slice turns, wide turns and cube rotations}
 Sometimes the basic turns are inconvenient to use in a certain case, for instance if you wanted to turn the middle slice, i.e., the slice \emph{sandwiched} between the right and the left side.\par
@@ -82,14 +94,14 @@ The last notation we want to introduce are \emph{cube rotations}. Cube rotations
 %TODO move to abstract?
 Before we go into detail, I am going to give you a rough idea of how roux works.\par
 
-\wrapfig{f2b_transparent.png}{R}{0.3}{0.3}{The First Two Blocks}
+\img{f2b_transparent.png}{0.3}{The First Two Blocks}
 
 %TODO capitalize or lowercase First Block, Second Block, Last Six Edges and so on?
 You start off by what is called the \emph{First Block}: you build a 1x2x3 block of one color around the matching center. Next, we will mirror the first block onto the opposite side. This leaves us in the state of the \emph{First Two Blocks} already solved. If we were looking from the front side, we would see that we are left with a T-shaped area which is yet to be solved. Notice how every piece that is yet to be solved is on either the middle slice or the upper layer. Mathematicians like to call these pieces the \emph{(linear) span}, denoted as $\langle M, U \rangle$, of the turns \texttt{U} and \texttt{M}.\par
 
-\wrapfig{lse.png}{L}{0.3}{0.3}{Before the Last Six Edges}
-
 We now want to solve the corners of the upper layer to be left with six unsolved edges and four unsolved centers. Solving the corners of the upper layer will be split into two seperate steps. First, we orient the corners to have their common color face up. Then we permute them to the places where they belong. Both of these steps are not very trivial and thus will require some algorithms. If you want to figure some algorithms out by yourself, you usually want to try to break up the First Two Blocks and then reconstruct them slightly differently. But there is no big learning effect involved, so I would not recommend doing so.\par
+
+\img{lse.png}{0.3}{Before the Last Six Edges}
 
 As mentioned previously, we are now left with six edges and four centers unsolved. As you realize quickly, the centers are at most two \texttt{M}-slice moves from being in their correct positions, leaving us with the \emph{Last Six Edges} unsolved. You can see in the figure beside how the cube would look so far. What speeds up the process of solving the Last Six Edges is the fact that you can now solve the cube by only using algorithms of $\langle M, U\rangle$, i.e., you do not have to scramble what you have solved so far.\par
 
@@ -107,16 +119,16 @@ You can start off by building a 1x1x2 block out of a center and edge piece. By a
 \begin{figure}[h]
 \centering
 \begin{subfigure}{.9\textwidth}
-  \includegraphics[width=.3\linewidth]{resources/fb_1.png}
+   \includegraphics[width=.3\linewidth]{resources/fb_1.png}
   \includegraphics[width=.3\linewidth]{resources/fb_2.png}
   \includegraphics[width=.3\linewidth]{resources/fb_3.png}
 \end{subfigure}
 \caption*{Building the first block with three 1x1x2 blocks}
 \end{figure}
 
-Alternatively, we could also start by putting the edges in place and inserting the corners afterwards. As shown in the picture, we want to keep the 1x2x3 block on the left bottom edge.
+Alternatively, we could also start by putting the edges in place and inserting the corners afterwards. I will leave finding an alternative, more efficient, solution up to you.\par
 
-Alternatively, you could bring the edges in place first and insert the corners afterwards.
+From now on, we want to keep the first block at the bottom left edge of our cube. We want to p
 
 
 \section{Second block}
