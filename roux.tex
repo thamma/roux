@@ -66,13 +66,13 @@ The most common method is closely related to the Beginner's Method: \emph{Fridri
 \section{Notation and terminology}
 \subsection{Face turns}
 To be able to communicate on this abstract level of thinking, we are going to use the standart notation and terminology which I will explain below.\par
-In our notation we are not going to consider the colors of the individual facelets but rather keep the cube in one orientation. Thus we can easily refer to the six faces of the puzzle as \textbf{u}p, \textbf{f}ront, \textbf{r}ight, \textbf{l}eft, \textbf{b}ack and \textbf{d}own and abbreviate them each by their initial letter. Keeping that in mind, we intuitively define the moves \emph{U}, \emph{F}, \emph{R}, \emph{L}, \emph{B} and \emph{D} as clockwise 90\textdegree\ turns of their respective face.\par
+In our notation we are not going to consider the colors of the individual facelets but rather keep the cube in one orientation. Thus we can easily refer to the six faces of the puzzle as \textbf{u}p, \textbf{f}ront, \textbf{r}ight, \textbf{l}eft, \textbf{b}ack and \textbf{d}own and abbreviate them each by their initial letter. Keeping that in mind, we intuitively define the moves \texttt{U}, \texttt{F}, \texttt{R}, \texttt{L}, \texttt{B} and \texttt{D} as clockwise 90\textdegree\ turns of their respective face.\par
 To denote the counterclockwise turn of a side, we add an apostrophe to the respective turn. If we wanted to perform a 180\textdegree\ rotation of a face, we would simply append the number two to the move.
 % Add example
 
 
 \subsection{Observations}
-For clarification: we consider a respective side of the cube to face us as we turn it. For instance \emph{U} and \emph{D} rotate opposite sides and turn in opposite directions. We certainly could also use \emph{U3} with the same logic as we defined \emph{U2} yet we would notice that \emph{U3} is the very same as \emph{U'}. We also see that \emph{R2} and \emph{R2'} result in the same turns. So would someone want to use \emph{R2'} at all? Yes - sometimes it can be useful to hint using two \emph{R'} moves over two \emph{R} moves for more efficient turning. Note how we are using uppercase letters for the basic turns. Lowercase letters are reserved for an upcoming notation.
+For clarification: we consider a respective side of the cube to face us as we turn it. For instance \texttt{U} and \texttt{D} rotate opposite sides and turn in opposite directions. We certainly could also use \texttt{U3} with the same logic as we defined \texttt{U2} yet we would notice that \texttt{U3} is the very same as \texttt{U'}. We also see that \texttt{R2} and \texttt{R2'} result in the same turns. So would someone want to use \texttt{R2'} at all? Yes - sometimes it can be useful to hint using two \texttt{R'} moves over two \texttt{R} moves for more efficient turning. Note how we are using uppercase letters for the basic turns. Lowercase letters are reserved for an upcoming notation.
 
 \img{slices.png}{0.4}{From top to bottom: the middle, equatorial and standing slice}
 
@@ -84,8 +84,12 @@ For that reason we define the \textbf{m}iddle slice turn, the \textbf{e}quatoria
 
 For a similar motivation as why we introduced the slice turns, we also define \emph{wide} moves. Wide moves are pretty self-explanatory: you grab two layers by expanding a face turn by the adjacent slice. We respectively add \texttt{w} for \emph{wide} to our collection of suffixes. As we add more suffixes, we want to introduce an abbreviated form for wide moves: replacing the uppercase letter by a lowercase one.\par
 
-The last notation we want to introduce are \emph{cube rotations}. Cube rotations require you to turn the entire cube inside your hands. We denote them as the three axes \texttt{X}, \texttt{Y} and \texttt{Z}. Again we need to clarify which axis turns in which direction: \texttt{X} turns in the same direction as \texttt{R}, \texttt{Y} turns in the same direction as \texttt{U} and \texttt{Z} turns in the same direction as \texttt{F}. Since you might run into this question: we do not differentiate between uppercase and lowercase cube rotations.
+\emph{Cube rotations} require you to turn the entire cube inside your hands. We denote them as the three axes \texttt{X}, \texttt{Y} and \texttt{Z}. Again we need to clarify which axis turns in which direction: \texttt{X} turns in the same direction as \texttt{R}, \texttt{Y} turns in the same direction as \texttt{U} and \texttt{Z} turns in the same direction as \texttt{F}. Since you might run into this question: we do not differentiate between uppercase and lowercase cube rotations.
 
+\subsection{Pieces and stickers}%needs rephrasing		
+Lastly, we want to be able to talk about certain pieces or certain stickers. We denote a piece of the cube by denoting its adjoining faces (in clockwise order). If we however talk about a certain sticker, we use a similar notation. We start by writing down the face letter of the sticker and complete it to the pieces notation.\par
+
+For instance, the upper, right, front corner piece can be written as \texttt{URF} as well as \texttt{FRU}. However the sticker on the upper face is always denoted as \texttt{URF}.
 
 \chapter{Roux}
 
@@ -128,22 +132,53 @@ You can start off by building a 1x1x2 block out of a center and edge piece. By a
 
 Alternatively, we could also start by putting the edges in place and inserting the corners afterwards. I will leave finding an alternative, more efficient, solution up to you.\par
 
-From now on, we want to keep the first block at the bottom left edge of our cube. We want to p
-
+We now want to keep the first block at the bottom left edge of our cube. This will help us build the rest more efficiently since \texttt{M}, \texttt{R} and \texttt{U} turns are fast to perform. Thus, our turning speed will increase drastically after the first block.\par
 
 \section{Second block}
+Now we want to mirror the first block on the right-hand side. Even though similar pieces are to solve, the second block comes with added difficulty. We want to build the second block without messing up the first block at all. Thus we are limited to moves, that do not scramble the first block: i.e. the moves of the $\langle R, U, M \rangle$ subset.\par
+
+Again, I leave it up to you to find an efficient solution to the second block. However I will briefly cover the analogue approach to solving the first block. We start by placing the \texttt{RD} edge first. In equal measure as we built the first block, we want to pair and insert the \texttt{RB} and \texttt{RBD} pieces into the corresponding slot. We proceed in the same way with the \texttt{RF}, \texttt{RDF} pair.
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}{.9\textwidth}
+   \includegraphics[width=.3\linewidth]{resources/sb_1.png}
+  \includegraphics[width=.3\linewidth]{resources/sb_2.png}
+  \includegraphics[width=.3\linewidth]{resources/sb_3.png}
+\end{subfigure}
+\caption*{Inserting two 1x2 blocks to shape the second block}
+\end{figure}
 
 \section{Corners Last Layer}
+Our last step before starting to solve the last six edges using only $\langle M, U \rangle$ is solving the upper layer corners. By solving we mean bringing their 
+
 
 \section{Last six edges}
+
+
+\subsection{Orientation}
+\subsection{Insertion}
+\subsection{Middle slice}
 
 
 \chapter{Appendix: Algorithms}
 
 \section{2 Look CLL}
+\subsection{Orientation}
+\subsection{Permutation}
 
 \section{CMLL}
+\subsection{Sune}
+\subsection{Anti-Sune}
+\subsection{Headlights}
+\subsection{Pi-Case}
+\subsection{Double Headlights}
+\subsection{Bowtie}
+\subsection{Chameleon}
 
 \section{LSE}
+\subsection{Orientation}
+\subsection{Insertion}
+\subsection{Middle slice}
 
 \end{document}
