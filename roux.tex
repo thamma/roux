@@ -24,7 +24,7 @@
 	\begin{figure}[ht]
 	\centering
   \includegraphics[width=#2\textwidth]{resources/#1}
-	\caption{#3}
+	\caption*{#3}
 	\end{figure}
 }
 
@@ -143,14 +143,14 @@ Again, I leave it up to you to find an efficient solution to the second block. H
 \centering
 \begin{subfigure}{.9\textwidth}
    \includegraphics[width=.3\linewidth]{resources/sb_1.png}
-  \includegraphics[width=.3\linewidth]{resources/sb_2.png}
-  \includegraphics[width=.3\linewidth]{resources/sb_3.png}
+   \includegraphics[width=.3\linewidth]{resources/sb_2.png}
+   \includegraphics[width=.3\linewidth]{resources/sb_3.png}
 \end{subfigure}
 \caption*{Inserting two 1x2 blocks to shape the second block}
 \end{figure}
 
 \section{Corners Last Layer}
-Our last step before starting to solve the last six edges using only $\langle M, U \rangle$ is solving the upper layer corners. By solving we mean bringing their 
+Next, we want to solve the upper layer corners. 
 
 
 \section{Last six edges}
@@ -159,6 +159,7 @@ Our last step before starting to solve the last six edges using only $\langle M,
 \subsection{Orientation}
 \subsection{Insertion}
 \subsection{Middle slice}
+
 
 
 \chapter{Appendix: Algorithms}
@@ -173,6 +174,11 @@ Our last step before starting to solve the last six edges using only $\langle M,
 \subsection{Headlights}
 \subsection{Pi-Case}
 \subsection{Double Headlights}
+\begin{itemize}
+\item
+	\textbf{Vertical bars}\par
+	\img{cmll/double_headlights/vertical.png}{0.5}{\texttt{RU2R'U'RUR'U'RU'R'}}
+\end{itemize}
 \subsection{Bowtie}
 \subsection{Chameleon}
 
