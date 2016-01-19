@@ -7,6 +7,8 @@
 \usepackage[english]{babel} 
 \usepackage{textcomp}
 
+\usepackage{float}
+
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -19,6 +21,8 @@
 \usepackage{caption}
 
 \usepackage[hidelinks]{hyperref}
+
+\setcounter{secnumdepth}{2}
 
 \newcommand{\img}[3]{
 	\begin{figure}[ht]
@@ -38,7 +42,24 @@
 	\end{subfigure}
 	\caption{Building the first block with three 1x1x2 blocks}
 \end{figure}
+}
 
+\newcommand{\algsheet}[5]{
+	\begin{minipage}{0.45\textwidth}
+	\begin{figure}[H]
+	\begin{center}
+	\textsc{#1}
+	\includegraphics[width=\textwidth]{resources/cmll/#2.png}
+	\end{center}
+	\end{figure}
+	\end{minipage} \hfill
+	\begin{minipage}{0.55\textwidth}
+	\begin{itemize}
+	\item \textbf{Algorithm}: \texttt{#3}
+	\item \textbf{Recognition}: #4
+	\item \textbf{Comments}: #5
+	\end{itemize}
+	\end{minipage}
 }
 
 \begin{document}
@@ -174,11 +195,32 @@ Next, we want to solve the upper layer corners.
 \subsection{Headlights}
 \subsection{Pi-Case}
 \subsection{Double Headlights}
-\begin{itemize}
+
+\begin{enumerate}[(i)]
 \item
-	\textbf{Vertical bars}\par
-	\img{cmll/double_headlights/vertical.png}{0.5}{\texttt{RU2R'U'RUR'U'RU'R'}}
+	\algsheet{Vertical Bars}{double_headlights/vertical}{
+		RU2R'U' (RUR'U') RU'R'
+	}{
+		Two vertical bars. Look image, nub.
+	}{
+		Easy AF to perform. Get it sub-.4 you skrub.
+	}
+\item
+Hii
+\begin{minipage}{0.45\textwidth}
+\begin{itemize}
+\item *Rectangle
+\item *Color: blue
 \end{itemize}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{resources/cmll/double_headlights/vertical.png}
+\end{figure}
+\end{minipage} \hfill
+
+\end{enumerate}
+
 \subsection{Bowtie}
 \subsection{Chameleon}
 
@@ -188,3 +230,20 @@ Next, we want to solve the upper layer corners.
 \subsection{Middle slice}
 
 \end{document}
+
+
+\begin{minipage}{0.45\textwidth}
+	\begin{figure}[H]
+	\begin{center}
+	\textsc{Vertical bars}
+	\includegraphics[width=\textwidth]{resources/cmll/double_headlights/vertical.png}
+	\end{center}
+	\end{figure}
+	\end{minipage} \hfill
+	\begin{minipage}{0.55\textwidth}
+	\begin{itemize}
+	\item \textbf{Algorithm}: \texttt{RU2R'U' (RUR'U') RU'R'}
+	\item \textbf{Recognition}: Two vertical bars. Look image, nub.
+	\item \textbf{Comments}: Easy AF to perform. Get it sub-.4 you skrub.
+	\end{itemize}
+	\end{minipage}
